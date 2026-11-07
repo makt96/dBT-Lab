@@ -34,11 +34,6 @@ SELECT
 
     month_started_at,
 
-    CASE
-        WHEN month_started_at IN (12, 1, 2) THEN 'Winter'
-        WHEN month_started_at IN (3, 4, 5) THEN 'Spring'
-        WHEN month_started_at IN (6, 7, 8) THEN 'Summer'
-        ELSE 'Autumn'
-    END AS season_of_year
+{{ get_season('started_at') }} AS season_of_year
 
 FROM date_attributes
