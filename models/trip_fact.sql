@@ -10,7 +10,6 @@ WITH trips AS (
 
 SELECT
     ride_id,
-    rideable_type,
 
     TO_TIMESTAMP(started_at) AS started_at,
 
@@ -18,7 +17,6 @@ SELECT
 
     start_station_id,
     end_station_id,
-
     member_casual,
 
     TIMESTAMPDIFF(
