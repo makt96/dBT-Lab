@@ -1,3 +1,4 @@
+
 WITH cte AS (
 
     SELECT
@@ -15,7 +16,6 @@ date_attributes AS (
         started_at,
         DATE(started_at) AS date_started_at,
         HOUR(started_at) AS hour_started_at,
-        DAYNAME(started_at) AS day_name,
         MONTH(started_at) AS month_started_at
 
     FROM cte
@@ -27,13 +27,10 @@ SELECT
     date_started_at,
     hour_started_at,
 
-    CASE
-        WHEN day_name IN ('Sat', 'Sun') THEN 'Weekend'
-        ELSE 'Business Day'
-    END AS day_type,
+    {{ day_type('started_at') }} AS day_type,
 
     month_started_at,
 
-{{ get_season('started_at') }} AS season_of_year
+    {{ get_season('started_at') }} AS season_of_year
 
 FROM date_attributes
