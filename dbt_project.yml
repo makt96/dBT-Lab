@@ -1,0 +1,39 @@
+
+# ============================================================
+# DBT LAB — PROJECT CONFIGURATION
+# ============================================================
+
+# Project identity
+name: 'dbt_lab'
+version: '1.0.0'
+config-version: 2
+
+# dbt Cloud connection profile
+profile: 'default'
+
+# Project directory configuration
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# Compiled SQL and generated artifacts
+target-path: "target"
+
+# Directories removed by dbt clean
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# ============================================================
+# MODEL CONFIGURATION
+# ============================================================
+
+models:
+  dbt_lab:
+
+    # Example models
+    example:
+      +materialized: table

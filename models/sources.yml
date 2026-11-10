@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: demo
+    database: DEMO
+    schema: DEMO_SCHEMA
+
+    tables:
+      - name: bike
+      - name: weather
