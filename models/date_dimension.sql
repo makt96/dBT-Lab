@@ -4,7 +4,7 @@ WITH cte AS (
     SELECT
         TO_TIMESTAMP(started_at) AS started_at
 
-    FROM {{ source('demo', 'bike') }}
+    FROM {{ ref('stg_bike') }}
 
     WHERE started_at != 'started_at'
 
