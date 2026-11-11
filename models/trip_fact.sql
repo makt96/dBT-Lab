@@ -2,7 +2,7 @@
 WITH trips AS (
 
     SELECT *
-    FROM {{ source('demo', 'bike') }}
+    FROM {{ ref('stg_bike') }}
 
     WHERE ride_id != 'ride_id'
 

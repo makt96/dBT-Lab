@@ -2,7 +2,7 @@
 WITH bike AS (
 
     SELECT *
-    FROM {{ source('demo', 'bike') }}
+    FROM {{ ref('stg_bike') }}
 
 ),
 
